@@ -39,6 +39,14 @@ jobs:
           dotnet publish -c Release -o dotnetcorewebapp
       - name: Print artifacts
         run: ls /home/runner/work/actionsdemo/actionsdemo/dotnetcorewebapp -a
+      - name: Create Artifact Folder
+        run: New-Item -Path '${{ github.workspace }}' -Name "Artifacts" -ItemType "directory"
+        shell: powershell
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/Artifacts
+          name: ${{ github.run_number }}
       #- name: 'Run Azure webapp deploy action using publish profile credentials'
         #uses: azure/webapps-deploy@v1
         #with: 
