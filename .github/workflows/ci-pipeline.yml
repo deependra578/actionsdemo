@@ -41,6 +41,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my-artifact
+          path: /home/runner/work/actionsdemo/actionsdemo/dotnetcorewebapp/
       #- name: 'Run Azure webapp deploy action using publish profile credentials'
         #uses: azure/webapps-deploy@v1
         #with: 
