@@ -2,14 +2,14 @@
 
 name: CI
 
-run-name: Deploy to ${{ github.event.inputs.env }} by @${{ github.actor }}
+run-name: Deployed branch on ${{ github.event.inputs.branch }}
 
 # Controls when the workflow will run
 on:
   workflow_dispatch:
     inputs:
-      env:
-        description: 'env'
+      branch:
+        description: 'selected branch'
         required: true
         
 
