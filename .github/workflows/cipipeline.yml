@@ -2,12 +2,16 @@
 
 name: CI
 
-run-name: Deploy by @${{ github.actor }}
+run-name: Deploy to ${{ github.event.inputs.env }} by @${{ github.actor }}
 
 # Controls when the workflow will run
 on:
   workflow_dispatch:
-    
+    inputs:
+      env:
+        description: 'env'
+        required: true
+        
 
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
